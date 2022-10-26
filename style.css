@@ -1,0 +1,15 @@
+:root {
+	/* Color Pallette */
+	--shade1: #513e60;
+	
+	font-family: Verdana, sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+	background-color: var(--shade1);
+	color: white;
+}
