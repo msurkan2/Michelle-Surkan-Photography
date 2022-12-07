@@ -1,15 +1,74 @@
-:root {
-	/* Color Pallette */
-	--shade1: #513e60;
-	
+body {
+	margin:0;
 	font-family: Verdana, sans-serif;
 }
 
-body {
-	margin: 0;
+nav {
+	background: gray;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	height: 60px;
+	color: white;
 }
 
-header {
-	background-color: var(--shade1);
-	color: white;
+nav > h1 {
+	margin:0;
+	align-self: center;
+	padding-left: 10px;
+	padding-right: 20px;
+	font-size: 16pt;
+}
+
+nav > ul {
+	margin:0;
+	padding:0;
+	display: flex;
+	flex-flow: row nowrap;
+	list-style: none;
+	flex-grow: 1;
+	align-items: stretch;
+}
+
+.nav-item {
+	display: flex;
+	align-items: stretch;
+}
+
+.nav-item > a {
+	background: none;
+	padding:10px;
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	transition: background-color, 0.2s;
+}
+
+.nav-item > a:hover {
+	background: silver;
+}
+
+
+.carousel {
+	background: #444444;
+	height:500px;
+	position: relative;
+}
+
+.carousel > .carousel-content {
+	position: relative;
+	height: 100%;
+	overflow: visible;
+	margin-left:50%;
+}
+
+.carousel > img {
+	display: none;
+}
+
+.carousel img {
+	position: absolute;
+	/* Makes the images the right size and aspect ratio */
+	height: 100%;
+	width: auto;
 }
