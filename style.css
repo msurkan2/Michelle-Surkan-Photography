@@ -48,9 +48,24 @@ nav > ul {
 	background: silver;
 }
 
+.carousel:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px black inset;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity, 0.3s;
+}
+
+.carousel:hover:before {
+  opacity: 1;
+}
 
 .carousel {
-	background: #444444;
+	background-color: #444444;
 	height:500px;
 	position: relative;
 	overflow:clip;
@@ -75,14 +90,7 @@ nav > ul {
 	/* Makes the images the right size and aspect ratio */
 	height: 100%;
 	width: auto;
-	/* transform: none; */
 	margin-left: 0;
-	/* transition: margin-left, 0.2s; */
-}
-
-.carousel:hover .carousel-content * {
-	/* transform: scale(0.9,0.9); */
-	/* margin-left: 10px; */
 }
 
 .carousel .carousel-controls {
@@ -104,6 +112,7 @@ nav > ul {
 	border: none;
 	display: flex;
 	align-items: center;
+	z-index: 1;
 }
 
 .carousel .carousel-button-right {
