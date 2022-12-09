@@ -1,6 +1,8 @@
 
 // Jquery event that runs when document is ready
 $(function(){
+	
+	// Image Carousels
 	$('.carousel').toArray().forEach(e => {
 		
 		let items = [...e.children];
@@ -9,37 +11,19 @@ $(function(){
 		// moving all elements of carousel into a div
 		$(e).html($("<div></div>").append(...items).addClass('carousel-content'));
 		
-		// Event that fires when an element is clicked
-		let setIndex = function(n)
-		{
-			n = Math.max(Math.min(n,items.length-1),0);
-			console.log(curIndex,n);
-			/* if(curIndex != n)  */items.forEach((item,index) => {
-				let x = index-n;
-				let heightPercent = 100-Math.abs(x)*10;
-				console.log(item.naturalWidth,item.naturalHeight,item.parentElement.clientHeight,heightPercent);
-				$(item).animate({
-					height: heightPercent+'%',
-					top: Math.abs(x)*5+'%',
-					left: -(item.naturalWidth/item.naturalHeight*item.parentElement.clientHeight*heightPercent/100)/2+x*300+'px',
-					zIndex: items.length-1-Math.abs(x),
-					// opacity: 1-Math.abs(x)*0.3
-				},{duration:160,queue:false,always:()=>{item.style.filter = `brightness(${Math.max(20,100-Math.abs(x)*40)}%)`;}});
-			});
-			curIndex = n;
-		}
-		
+		// position and style all images in their starting arrangement
 		items.forEach((item,index) => {
 			item.style.height = 100-index*10+'%';
 			item.style.top = index*5+'%';
 			item.style.left = -item.clientWidth/2+index*300+'px';
 			item.style.zIndex = items.length-1-index;
-			// item.style.opacity = 1-index*0.3;
 			item.style.filter = `brightness(${Math.max(20,100-index*40)}%)`;
 			
+			// make it so you can click on images to focus them
 			$(item).click(()=>setIndex(index));
 		});
 		
+		// create the div that houses all the control elements
 		let controldiv = $('<div class="carousel-controls"></div>');
 		$(e).append(controldiv);
 		
@@ -50,9 +34,61 @@ $(function(){
 		$(controldiv).append($('<button type="button" class="carousel-button carousel-button-right"></button>').append($('<img src="assets/carousel_arrow.svg">')).click(()=>setIndex(curIndex+1)));
 		
 		// create dots
-		$(controldiv).append($('<div class="carousel-dots"></div>').append(...items.map((item,index) => {
+		let dots = $('<div class="carousel-dots"></div>').append(...items.map((item,index) => {
 			return $('<button type="button" class="carousel-dot"></button>').append($('<span></span>')).click(()=>setIndex(index));
-		})));
+		}));
+		$(controldiv).append(dots);
+		$(dots).children().first().addClass('selected');
+		
+		//Add mouse wheel control
+		$(e).on('wheel',function(ev) {
+			if(ev.originalEvent.deltaY < 0)
+			{
+				// scroll up
+				if(curIndex > 0)
+				{
+					setIndex(curIndex-1);
+					return false;
+				}
+			}
+			else
+			{
+				// scroll down
+				if(curIndex < items.length-1)
+				{
+					setIndex(curIndex+1);
+					return false;
+				}
+			}
+		});
+		
+		
+		// Event that fires when an element is clicked
+		let setIndex = function(n)
+		{
+			// clamp n to valid indices
+			n = Math.max(Math.min(n,items.length-1),0);
+			
+			// animate all images to their new positions
+			if(curIndex != n) items.forEach((item,index) => {
+				let x = index-n;
+				let heightPercent = 100-Math.abs(x)*10;
+				$(item).animate({
+					height: heightPercent+'%',
+					top: Math.abs(x)*5+'%',
+					left: -(item.naturalWidth/item.naturalHeight*item.parentElement.clientHeight*heightPercent/100)/2+x*300+'px',
+					zIndex: items.length-1-Math.abs(x)
+				},{duration:160,queue:false,always:()=>{item.style.filter = `brightness(${Math.max(20,100-Math.abs(x)*40)}%)`;}});
+			});
+			
+			// change selected dot
+			let dotElements = $(dots).children();
+			dotElements.eq(curIndex).removeClass('selected');
+			dotElements.eq(n).addClass('selected');
+			
+			// update curIndex
+			curIndex = n;
+		}
 	});
 	
 	// Block context menus on all images on the page to discourage copying.

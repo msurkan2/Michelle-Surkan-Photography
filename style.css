@@ -37,6 +37,8 @@ nav > ul {
 
 .nav-item > a {
 	background: none;
+	color: white;
+	text-decoration:none;
 	padding:10px;
 	display: flex;
 	align-items: center;
@@ -105,6 +107,12 @@ nav > ul {
 	height:100%;
 	width:100%;
 	pointer-events:none;
+	opacity: 0;
+	transition: opacity, 0.3s;
+}
+
+.carousel:hover .carousel-controls {
+	opacity: 1;
 }
 
 .carousel .carousel-button {
@@ -117,6 +125,7 @@ nav > ul {
 	display: flex;
 	align-items: center;
 	z-index: 1;
+	cursor:pointer;
 }
 
 .carousel .carousel-button-right {
@@ -153,23 +162,31 @@ nav > ul {
 }
 
 .carousel .carousel-dots .carousel-dot {
-	width: 48px;
-	height: 48px;
+	width: 40px;
+	height: 40px;
 	background: none;
 	border: none;
 	border-radius: 6px;
+	cursor:pointer;
 }
 
 .carousel .carousel-dots .carousel-dot span {
 	display: block;
 	margin: auto;
-	width: 12px;
-	height: 12px;
-	background: white;
+	width: 10px;
+	height: 10px;
+	background-color: white;
 	border-radius: 50%;
+	transition: background-color, width, height, 0.2s;
 }
 
 .carousel .carousel-dots .carousel-dot:hover {
 	background: #00000066;
 	box-shadow: 0 0 6px white;
+}
+
+.carousel .carousel-dots .carousel-dot.selected span {
+	background-color: gray;
+	width: 14px;
+	height: 14px;
 }
