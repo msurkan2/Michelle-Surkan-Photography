@@ -36,6 +36,7 @@ $(function(){
 			item.style.zIndex = items.length-1-index;
 			// item.style.opacity = 1-index*0.3;
 			item.style.filter = `brightness(${Math.max(20,100-index*40)}%)`;
+			
 			$(item).click(()=>setIndex(index));
 		});
 		
@@ -53,4 +54,7 @@ $(function(){
 			return $('<button type="button" class="carousel-dot"></button>').append($('<span></span>')).click(()=>setIndex(index));
 		})));
 	});
+	
+	// Block context menus on all images on the page to discourage copying.
+	$('img').contextmenu(function(e) {e.preventDefault();});
 });

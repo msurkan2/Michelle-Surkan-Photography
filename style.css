@@ -71,6 +71,10 @@ nav > ul {
 	overflow:clip;
 }
 
+.carousel * {
+	user-select: none;
+}
+
 .carousel > .carousel-content {
 	position: relative;
 	height: 100%;
