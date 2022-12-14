@@ -29,7 +29,7 @@ $(function(){
 		$(e).append(controldiv);
 		
 		// create back button
-		$(controldiv).append($('<button type="button" class="carousel-button carousel-button-left"></button>').append($('<img src="assets/carousel_arrow.svg">').css('transform','scaleX(-1)')).click(()=>setIndex(curIndex-1)));
+		$(controldiv).append($('<button type="button" class="carousel-button carousel-button-left"></button>').append($('<img src="assets/carousel_arrow.svg">')).click(()=>setIndex(curIndex-1)));
 		
 		// create forward button
 		$(controldiv).append($('<button type="button" class="carousel-button carousel-button-right"></button>').append($('<img src="assets/carousel_arrow.svg">')).click(()=>setIndex(curIndex+1)));

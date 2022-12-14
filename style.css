@@ -1,32 +1,43 @@
+:root {
+	--palette1: #F34D87;
+	--palette1-acc1: #FDA4C4;
+	
+	--palettegray: #888888;
+}
+
 body {
 	margin:0;
 	font-family: Verdana, sans-serif;
 }
 
-nav {
-	background: gray;
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: stretch;
-	height: 60px;
+header {
+	display: block;
+	background: var(--palette1);
+	/* height: 100px; */
 	color: white;
 }
 
-nav > h1 {
+header > h1 {
+	display: block;
 	margin:0;
-	align-self: center;
-	padding-left: 10px;
-	padding-right: 20px;
+	padding: 10px;
+	padding-top: 20px;
 	font-size: 16pt;
+	text-align: center;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	height: 60px;
 }
 
 nav > ul {
-	margin:0;
-	padding:0;
 	display: flex;
+	margin: 0;
+	padding:0;
 	flex-flow: row nowrap;
 	list-style: none;
-	flex-grow: 1;
 	align-items: stretch;
 }
 
@@ -47,30 +58,36 @@ nav > ul {
 }
 
 .nav-item > a:hover {
-	background: silver;
+	background: var(--palette1-acc1);
 }
 
-.carousel:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  box-shadow: 0 0 50px black inset;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity, 0.3s;
-}
+/* .carousel:before { */
+  /* content: ""; */
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* box-shadow: 0 0 50px black inset; */
+  /* pointer-events: none; */
+  /* opacity: 0; */
+  /* transition: opacity, 0.3s; */
+/* } */
 
-.carousel:hover:before {
-  opacity: 1;
+/* .carousel:hover:before { */
+  /* opacity: 1; */
+/* } */
+
+main {
+	padding: 10px;
 }
 
 .carousel {
-	background-color: #444444;
+	background: none;
 	height:500px;
 	position: relative;
 	overflow:clip;
+	border: 2px solid var(--palettegray);
+	border-radius: 12px;
 }
 
 .carousel * {
@@ -79,9 +96,8 @@ nav > ul {
 
 .carousel > .carousel-content {
 	position: relative;
-	height: 100%;
-	width: 100%;
-	top: 0;
+	height: 80%;
+	top: 10%;
 	overflow: visible;
 	z-index: 0;
 }
@@ -115,14 +131,16 @@ nav > ul {
 }
 
 .carousel .carousel-button {
-	width: 240px;
-	height: 100%;
+	height: 20%;
+	top: 40%;
+	aspect-ratio: 1;
 	position: absolute;
 	pointer-events:auto;
 	background: none;
 	border: none;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	cursor:pointer;
 }
 
@@ -131,31 +149,36 @@ nav > ul {
 }
 
 .carousel .carousel-button-left > img {
-	position: absolute;
-	left: 50px;
+	position: relative;
+	filter: drop-shadow(0 0 4px #00000088);
+	transform: scaleX(-1);
 }
 
 .carousel .carousel-button-right > img {
-	position: absolute;
-	right: 50px;
+	position: relative;
+	filter: drop-shadow(0 0 4px #00000088);
 }
 
-.carousel .carousel-button-right:hover {
-	background: linear-gradient(to right,#00000000,#00000088);
+.carousel .carousel-button-right:hover > img{
+	filter: drop-shadow(0 0 4px black);
+	left: 2px;
 }
 
-.carousel .carousel-button-left:hover {
-	background: linear-gradient(to left,#00000000,#00000088);
+.carousel .carousel-button-left:hover > img{
+	filter: drop-shadow(0 0 4px black);
+	left: -2px;
 }
 
 .carousel .carousel-dots {
 	position: absolute;
 	/* margin: auto; */
-	width: 100%;
-	bottom: 20px;
+	width: 50%;
+	left: 25%;
+	bottom: 0;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
+	background: radial-gradient(ellipse farthest-side at 50% 100%,#00000088,#00000000);
 }
 
 .carousel .carousel-dots .carousel-dot {
@@ -169,22 +192,23 @@ nav > ul {
 }
 
 .carousel .carousel-dots .carousel-dot span {
+	position: relative;
 	display: block;
 	margin: auto;
 	width: 10px;
 	height: 10px;
 	background-color: white;
 	border-radius: 50%;
-	transition: background-color, width, height, 0.2s;
+	border: 2px solid white;
+	transition: background-color 0.2s, width 0.2s, height 0.2s;
 }
 
-.carousel .carousel-dots .carousel-dot:hover {
-	background: #00000066;
-	box-shadow: 0 0 6px white;
+.carousel .carousel-dots .carousel-dot:hover span {
+	top: -2px;
 }
 
 .carousel .carousel-dots .carousel-dot.selected span {
-	background-color: gray;
+	background-color: var(--palette1-acc1);
 	width: 14px;
 	height: 14px;
 }
