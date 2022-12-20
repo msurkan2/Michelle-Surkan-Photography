@@ -13,16 +13,17 @@ $(function(){
 		
 		// position and style all images in their starting arrangement
 		items.forEach((item,index) => {
-			item.style.height = 100-index*10+'%';
+			item.style.height = '100%';
 			item.style.top = '50%';
 			item.style.left = index*300+'px';
 			item.style.transform = 'translate(-50%,-50%)';
 			item.style.zIndex = items.length-1-index;
-			item.style.filter = `brightness(${Math.max(20,100-index*40)}%)`;
+			item.style.opacity = 0;
 			
 			// make it so you can click on images to focus them
 			$(item).click(()=>setIndex(index));
 		});
+		items[0].style.opacity = 1;
 		
 		// create the div that houses all the control elements
 		let controldiv = $('<div class="carousel-controls"></div>');
@@ -75,10 +76,10 @@ $(function(){
 				let x = index-n;
 				let heightPercent = 100-Math.abs(x)*10;
 				$(item).animate({
-					height: heightPercent+'%',
 					left: x*300+'px',
-					zIndex: items.length-1-Math.abs(x)
-				},{duration:160,queue:false,always:()=>{item.style.filter = `brightness(${Math.max(20,100-Math.abs(x)*40)}%)`;}});
+					zIndex: items.length-1-Math.abs(x),
+					opacity: !x
+				},{duration:160,queue:false});
 			});
 			
 			// change selected dot

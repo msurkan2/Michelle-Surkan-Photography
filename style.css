@@ -86,8 +86,6 @@ main {
 	height:500px;
 	position: relative;
 	overflow:clip;
-	border: 2px solid var(--palettegray);
-	border-radius: 12px;
 }
 
 .carousel * {
