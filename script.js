@@ -148,6 +148,10 @@ $(function(){
 				zIndex: 0
 			},{duration: 160, queue: false});
 		}
+		
+		// TODO change this to pause on certain conditions
+		// Automatically switches the image every once in a while
+		window.setInterval(moveRight, 6000);
 	});
 	
 	// Block context menus on all images on the page to discourage copying.

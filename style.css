@@ -4,6 +4,7 @@
 	--palette1-acc1-t: #FDA4C488;
 	--palette2: #502c98;
 	--palette3: #4883b7;
+	--palette4: #c1b970;
 	
 	--palettegray: #888888;
 }
@@ -23,7 +24,6 @@ body {
 header {
 	display: block;
 	background: linear-gradient(160deg,var(--palette1),var(--palette2));
-	/* height: 100px; */
 	color: white;
 }
 
@@ -117,7 +117,7 @@ footer {
 	position: relative;
 	height: calc(100% - 60px);
 	width: calc(100% - 60px);
-	top: 30px;
+	top: 25px;
 	left: 30px;
 	overflow: visible;
 	z-index: 0;
@@ -125,7 +125,7 @@ footer {
 }
 
 .carousel:hover .carousel-content {
-	top: 35px;
+	top: 30px;
 }
 
 /* Hides images in carousel until loaded */
@@ -148,12 +148,7 @@ footer {
 	height:100%;
 	width:100%;
 	pointer-events:none;
-	opacity: 0;
 	transition: opacity, 0.3s;
-}
-
-.carousel:hover .carousel-controls {
-	opacity: 1;
 }
 
 .carousel .carousel-button {
@@ -167,7 +162,13 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor:pointer;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.carousel:hover .carousel-button {
+	opacity: 1;
 }
 
 .carousel .carousel-button-right {
@@ -197,14 +198,26 @@ footer {
 
 .carousel .carousel-dots {
 	position: absolute;
-	/* margin: auto; */
 	width: 50%;
 	left: 25%;
 	bottom: 0;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
+}
+
+.carousel .carousel-dots:before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
 	background: radial-gradient(ellipse farthest-side at 50% 100%,#00000088,#00000000);
+	opacity: 0;
+	transition: opacity, 0.3s;
+}
+
+.carousel:hover .carousel-dots:before {
+	opacity: 1;
 }
 
 .carousel .carousel-dots .carousel-dot {
@@ -212,8 +225,7 @@ footer {
 	height: 40px;
 	background: none;
 	border: none;
-	border-radius: 6px;
-	cursor:pointer;
+	cursor: pointer;
 	pointer-events: auto;
 }
 
@@ -223,10 +235,17 @@ footer {
 	margin: auto;
 	width: 10px;
 	height: 10px;
-	background-color: white;
+	background-color: var(--palette4);
 	border-radius: 50%;
-	border: 2px solid white;
-	transition: background-color 0.2s, width 0.2s, height 0.2s;
+	border: 2px solid transparent;
+	background-clip: padding-box;
+	transition: all 0.2s;
+}
+
+.carousel:hover .carousel-dots .carousel-dot span {
+	background-color: white;
+	border-color: white;
+	background-clip: initial;
 }
 
 .carousel .carousel-dots .carousel-dot:hover span {
@@ -234,6 +253,12 @@ footer {
 }
 
 .carousel .carousel-dots .carousel-dot.selected span {
+	/* background-color: var(--palette3); */
+	outline: 2px solid var(--palette4);
+}
+
+.carousel:hover .carousel-dots .carousel-dot.selected span {
+	outline: none;
 	background-color: var(--palette3);
 	width: 14px;
 	height: 14px;
