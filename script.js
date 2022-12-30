@@ -37,7 +37,8 @@ $(function(){
 		
 		// position and style all images in their starting arrangement
 		items.forEach((item,index) => {
-			item.style.height = '100%';
+			item.style.maxHeight = '100%';
+			item.style.maxWidth = '100%';
 			item.style.top = '50%';
 			item.style.transform = 'translate(-50%,-50%)';
 			// item.style.left = index*300+'px';
