@@ -1,6 +1,9 @@
 :root {
 	--palette1: #F34D87;
 	--palette1-acc1: #FDA4C4;
+	--palette1-acc1-t: #FDA4C488;
+	--palette2: #502c98;
+	--palette3: #4883b7;
 	
 	--palettegray: #888888;
 }
@@ -12,7 +15,7 @@ body {
 
 header {
 	display: block;
-	background: var(--palette1);
+	background: linear-gradient(160deg,var(--palette1),var(--palette2));
 	/* height: 100px; */
 	color: white;
 }
@@ -54,11 +57,13 @@ nav > ul {
 	display: flex;
 	align-items: center;
 	flex-grow: 1;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	transition: background-color, 0.2s;
 }
 
 .nav-item > a:hover {
-	background: var(--palette1-acc1);
+	background: var(--palette1-acc1-t);
 }
 
 /* .carousel:before { */
@@ -206,7 +211,7 @@ main {
 }
 
 .carousel .carousel-dots .carousel-dot.selected span {
-	background-color: var(--palette1-acc1);
+	background-color: var(--palette3);
 	width: 14px;
 	height: 14px;
 }
