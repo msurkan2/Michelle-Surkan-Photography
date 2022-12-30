@@ -4,7 +4,9 @@
 	--palette1-acc1-t: #FDA4C488;
 	--palette2: #502c98;
 	--palette3: #4883b7;
+	--palette3-30d: #325c80;
 	--palette4: #c1b970;
+	--palette4-20d: #9a945a;
 	
 	--palettegray: #888888;
 }
@@ -76,13 +78,27 @@ nav > ul {
 
 main {
 	padding: 10px;
+	color: var(--palette3);
+}
+
+main h2 {
+	color: var(--palette3-30d);
+	text-decoration: underline var(--palette4);
+	/* border-bottom: 2px solid var(--palette4); */
+	/* width: 40%; */
 }
 
 
 footer {
 	background: linear-gradient(160deg,var(--palette2),var(--palette3));
 	color: white;
-	padding:10px;
+	padding: 30px;
+}
+
+footer > * {
+	margin: auto;
+	text-align: center;
+	font-style: italic;
 }
 
 .carousel:before {
@@ -138,6 +154,7 @@ footer {
 	/* Makes the images the right aspect ratio */
 	width: auto;
 	margin-left:50%;
+	border-radius: 5px;
 }
 
 .carousel .carousel-controls {
