@@ -27,28 +27,101 @@ header {
 	display: block;
 	background: linear-gradient(160deg,var(--palette1),var(--palette2));
 	color: white;
+	padding: 10px;
+	padding-top: 20px;
 }
 
 header > h1 {
 	display: block;
 	margin:0;
-	padding: 10px;
-	padding-top: 20px;
+	margin-bottom: 10px;
 	font-size: 16pt;
 	text-align: center;
+}
+
+/* nav { */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* height: 60px; */
+/* } */
+
+/* nav > ul { */
+	/* display: flex; */
+	/* margin: 0; */
+	/* padding:0; */
+	/* flex-flow: row nowrap; */
+	/* list-style: none; */
+	/* align-items: stretch; */
+/* } */
+
+/* .nav-item { */
+	/* display: flex; */
+	/* align-items: stretch; */
+/* } */
+
+/* .nav-item > a { */
+	/* background: none; */
+	/* color: white; */
+	/* text-decoration:none; */
+	/* padding:10px; */
+	/* display: flex; */
+	/* align-items: center; */
+	/* flex-grow: 1; */
+	/* border-top-left-radius: 8px; */
+	/* border-top-right-radius: 8px; */
+	/* transition: background-color, 0.2s; */
+/* } */
+
+/* .nav-item > a:hover { */
+	/* background: var(--palette1-acc1-t); */
+/* } */
+
+#nav-button:before {
+	content: '\2630';
+	color: white;
+	font-size: 20pt;
+	vertical-align: middle;
+	line-height: 0;
+}
+
+#nav-button {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: #00000044;
+	border: none;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	border-radius: 10px;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+#nav-button:hover {
+	background: #00000088;
 }
 
 nav {
 	display: flex;
 	justify-content: center;
-	height: 60px;
+	overflow-y: clip;
+	/* display: none; */
+	height: 0;
+	transition: height 0.3s;
+}
+
+nav.enabled {
+	height: 300px;
 }
 
 nav > ul {
 	display: flex;
 	margin: 0;
-	padding:0;
-	flex-flow: row nowrap;
+	padding: 0;
+	width: 100%;
+	flex-flow: column nowrap;
 	list-style: none;
 	align-items: stretch;
 }
@@ -62,17 +135,19 @@ nav > ul {
 	background: none;
 	color: white;
 	text-decoration:none;
-	padding:10px;
-	display: flex;
-	align-items: center;
+	padding: 20px;
+	text-align: center;
 	flex-grow: 1;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+	border-radius: 8px;
 	transition: background-color, 0.2s;
 }
 
 .nav-item > a:hover {
 	background: var(--palette1-acc1-t);
+}
+
+@media screen and (min-width: 800px) {
+	
 }
 
 
@@ -101,6 +176,29 @@ footer > * {
 	font-style: italic;
 }
 
+footer a {
+	color: currentColor;
+}
+
+#back-to-top-button {
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.fig-right {
+	width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+	.fig-right {
+		width:50%;
+		float: right;
+		background: red;
+	}
+}
+
+/* All the carousel-related stuff below */
+
 .carousel:before {
   content: "";
   position: absolute;
@@ -120,7 +218,7 @@ footer > * {
 
 .carousel {
 	background: none;
-	height:500px;
+	aspect-ratio: 3 / 2;
 	position: relative;
 	overflow:clip;
 }
@@ -131,17 +229,17 @@ footer > * {
 
 .carousel > .carousel-content {
 	position: relative;
-	height: calc(100% - 60px);
-	width: calc(100% - 60px);
-	top: 25px;
-	left: 30px;
+	height: calc(95% - 32px);
+	width: 90%;
+	top: calc(5% - 5px);
+	left: 5%;
 	overflow: visible;
 	z-index: 0;
 	transition: top, 0.3s;
 }
 
 .carousel:hover .carousel-content {
-	top: 30px;
+	top: 5%;
 }
 
 /* Hides images in carousel until loaded */
@@ -279,10 +377,4 @@ footer > * {
 	background-color: var(--palette3);
 	width: 14px;
 	height: 14px;
-}
-
-@media screen and (max-width: 850px) {
-	.carousel {
-		height: 300px;
-	}
 }

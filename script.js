@@ -26,6 +26,9 @@ const queueAction = (() => {
 // Jquery event that runs when document is ready
 $(function(){
 	
+	// Fill in the copyright year
+	$('#copyright-year').text(new Date().getFullYear());
+	
 	// Image Carousels
 	$('.carousel').toArray().forEach(e => {
 		

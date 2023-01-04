@@ -11,6 +11,7 @@
 	<body>
 		<header>
 			<h1>Michelle Surkan<br>Affordable Digital Photography</h1>
+			<button id="nav-button" onclick="$('nav').toggleClass('enabled');"></button>
 			<nav>
 				<ul>
 					<li class="nav-item">
@@ -33,7 +34,7 @@
 		</header>
 		<main>
 			<article class="clearfix">
-				<div class="carousel" style="display:inline-block;float:right;width:50%;">
+				<div class="carousel fig-right" style="display:inline-block;">
 					<!-- Any images in here will become items of the carousel -->
 					<img src="images/home_1.jpg" alt="Downtown Bellevue Skyline">
 					<img src="images/home_2.jpg" alt="Lens Fog Portrait">
@@ -52,13 +53,13 @@
 		</main>
 		<footer>
 			<p style="margin-bottom:30px;">
-				Michelle Surkan Photography | address | phone | email
+				Michelle Surkan Photography | address | phone | <a href="mailto:test@test.com">email</a>
 			</p>
 			<div style="display:flex;flex-flow:row-nowrap;justify-content:space-between;">
 				<div>
-					&copy;Michelle Surkan Photography <small>2023</small> | All rights reserved.
+					&copy;Michelle Surkan Photography <small id="copyright-year"></small> | All rights reserved.
 				</div>
-				<a href="" style="color:white;">&uarr; Back to Top</a>
+				<a id="back-to-top-button" onclick="document.documentElement.scrollTop = 0;">&uarr; Back to Top</a>
 			</div>
 		</footer>
 	</body>
