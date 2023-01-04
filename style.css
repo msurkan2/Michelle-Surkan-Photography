@@ -37,6 +37,20 @@ header > h1 {
 	margin-bottom: 10px;
 	font-size: 16pt;
 	text-align: center;
+	color: var(--palette4);
+	margin-top: 10px;
+	border-bottom: 2px solid var(--palette4);
+	padding-bottom:6px;
+}
+
+#letter-logo {
+	width: 390px;
+	margin: auto;
+	display: block;
+}
+#logo {
+	width: 80px;
+	position: absolute
 }
 
 /* nav { */
