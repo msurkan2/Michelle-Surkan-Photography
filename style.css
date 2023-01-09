@@ -17,9 +17,19 @@
 	display: table;
 }
 
+@font-face {
+	font-family: spartanmb;
+	src: url("assets/fonts/SpartanMB-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2");
+}
+
 body {
 	margin:0;
-	font-family: Verdana, sans-serif;
+	font-family: spartanmb, sans-serif;
 	padding:0;
 }
 
