@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home | Michelle Surkan | Affordable Digital Photography</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="script.js"></script>
-	</head>
-	<body>
-		<header>
-			<img id="logo" src="assets/Michelle Surkan logo photograph of sun.png"></img>
-			<img id="letter-logo" src="assets/Michelle Surkan Logo.png"></img>
-			<h1>Affordable Digital Photography</h1>
-			<button id="nav-button" onclick="$('nav').toggleClass('enabled');"></button>
-			<nav>
-				<ul>
-					<li class="nav-item">
-						<a href="index.html">Photos</a>
-					</li>
-					<li class="nav-item">
-						<a href="index.html">Prices</a>
-					</li>
-					<li class="nav-item">
-						<a href="index.html">My Approach</a>
-					</li>
-					<li class="nav-item">
-						<a href="index.html">Contact</a>
-					</li>
-					<li class="nav-item">
-						<a href="index.html">Home</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<article class="clearfix">
-				<div class="carousel fig-right" style="display:inline-block;">
-					<!-- Any images in here will become items of the carousel -->
-					<img src="images/home_1.jpg" alt="Downtown Bellevue Skyline">
-					<img src="images/home_2.jpg" alt="Lens Fog Portrait">
-					<img src="images/home_3.jpg" alt="Pink Dahlia Flowers">
-					<img src="images/hobbes.jpg" alt="Hobbes the cat looking pensive">
-				</div>
-				<div style="margin-left:30px;margin-right:30px;">
-					<h2>
-						About Me:
-					</h2>
-					<p>
-						Hi! I am a photographer based in Bellevue, Washington. I learned my craft from photographer and teacher Ray Pfortner and specialize in portraits. I am constantly inspired by the world around me and love capturing the unique beauty of each and every one of my subjects. Whether it's a family portrait, senior photo, or engagement session, I strive to create images that are genuine and full of emotion. I am always looking for new ways to improve my craft and push the boundaries of traditional portrait photography. Thank you for considering me for your photography needs.
-					</p>
-				</div>
-			</article>
-		</main>
-		<footer>
-			<p style="margin-bottom:30px;">
-				Michelle Surkan Photography | address | phone | <a href="mailto:test@test.com">email</a>
-			</p>
-			<div style="display:flex;flex-flow:row-nowrap;justify-content:space-between;">
-				<div>
-					&copy;Michelle Surkan Photography <small id="copyright-year"></small> | All rights reserved.
-				</div>
-				<a id="back-to-top-button" onclick="document.documentElement.scrollTop = 0;">&uarr; Back to Top</a>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home | Michelle Surkan | Affordable Digital Photography</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..900">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<header>
+		<img id="logo" src="assets/Michelle Surkan logo photograph of sun.png"></img>
+		<img id="letter-logo" src="assets/Michelle Surkan Logo.png"></img>
+		<h1>Affordable Digital Photography</h1>
+		<button id="nav-button" onclick="$('nav').toggleClass('enabled');"></button>
+		<nav>
+			<ul>
+				<li class="nav-item">
+					<a href="index.html">Photos</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.html">Prices</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.html">My Approach</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.html">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.html">Home</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<article class="clearfix">
+			<div class="carousel fig-right" style="display:inline-block;">
+				<!-- Any images in here will become items of the carousel -->
+				<img src="images/home_1.jpg" alt="Downtown Bellevue Skyline">
+				<img src="images/home_2.jpg" alt="Lens Fog Portrait">
+				<img src="images/home_3.jpg" alt="Pink Dahlia Flowers">
+				<img src="images/hobbes.jpg" alt="Hobbes the cat looking pensive">
 			</div>
-		</footer>
-	</body>
+			<div style="margin-left:30px;margin-right:30px;">
+				<h2>
+					About Me:
+				</h2>
+				<p>
+					Hi! I am a photographer based in Bellevue, Washington. I learned my craft from photographer and
+					teacher Ray Pfortner and specialize in portraits. I am constantly inspired by the world around me
+					and love capturing the unique beauty of each and every one of my subjects. Whether it's a family
+					portrait, senior photo, or engagement session, I strive to create images that are genuine and full
+					of emotion. I am always looking for new ways to improve my craft and push the boundaries of
+					traditional portrait photography. Thank you for considering me for your photography needs.
+				</p>
+			</div>
+		</article>
+	</main>
+	<footer>
+		<p style="margin-bottom:30px;">
+			Michelle Surkan Photography | address | phone | <a href="mailto:test@test.com">email</a>
+		</p>
+		<div style="display:flex;flex-flow:row-nowrap;justify-content:space-between;">
+			<div>
+				&copy;Michelle Surkan Photography <small id="copyright-year"></small> | All rights reserved.
+			</div>
+			<a id="back-to-top-button" onclick="document.documentElement.scrollTop = 0;">&uarr; Back to Top</a>
+		</div>
+	</footer>
+</body>
+
 </html>

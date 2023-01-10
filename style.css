@@ -17,19 +17,30 @@
 	display: table;
 }
 
-@font-face {
+/* @font-face {
 	font-family: spartanmb;
 	src: url("assets/fonts/SpartanMB-Regular.woff2") format("woff2");
+} */
+
+/* @font-face {
+	font-family: montserrat;
+	src: url("assets/fonts/Montserrat-VariableFont_wght.woff2") format("woff2-variations");
+	font-weight: 100 900;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: montserrat;
-	src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2");
-}
+	src: url("assets/fonts/Montserrat-Italic-VariableFont_wght.woff2") format("woff2-variations");
+	font-weight: 100 900;
+	font-style: italic;
+} */
 
 body {
 	margin:0;
-	font-family: spartanmb, sans-serif;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+	font-style: normal;
 	padding:0;
 }
 
