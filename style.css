@@ -1,13 +1,25 @@
 :root {
-	--palette1: #C1F7DC;
+	--palette1: #9EE293;
+	--palette1-acc1: #FDA4C4;
+	--palette1-acc1-t: #FDA4C488;
+	--palette2: #d793e2;
+	--palette2-50d: #6c4a71;
+	--palette3: #93c5e2;
+	--palette3-20d: #769eb5;
+	--palette3-50d: #4a6371;
+	--palette4: #e2af93;
+	--palette4-20d: #b58c76;
+	--palette4-50l: #f1d7c9;
+
+	/* --palette1: #C1F7DC;
 	--palette1-acc1: #FDA4C4;
 	--palette1-acc1-t: #FDA4C488;
 	--palette2: #bda0bc;
 	--palette3: #4883b7;
 	--palette3-30d: #325c80;
 	--palette4: #824670;
-	--palette4-20d: #9a945a;
-	
+	--palette4-20d: #9a945a; */
+
 	--palettegray: #888888;
 }
 
@@ -17,56 +29,38 @@
 	display: table;
 }
 
-/* @font-face {
-	font-family: spartanmb;
-	src: url("assets/fonts/SpartanMB-Regular.woff2") format("woff2");
-} */
-
-/* @font-face {
-	font-family: montserrat;
-	src: url("assets/fonts/Montserrat-VariableFont_wght.woff2") format("woff2-variations");
-	font-weight: 100 900;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: montserrat;
-	src: url("assets/fonts/Montserrat-Italic-VariableFont_wght.woff2") format("woff2-variations");
-	font-weight: 100 900;
-	font-style: italic;
-} */
-
 body {
-	margin:0;
+	margin: 0;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 300;
 	font-style: normal;
-	padding:0;
+	padding: 0;
 }
 
 header {
 	display: block;
-	background: linear-gradient(160deg,var(--palette1),var(--palette2));
+	background: linear-gradient(160deg, var(--palette1), var(--palette4-50l), var(--palette2));
 	color: white;
 	padding: 10px;
 	padding-top: 20px;
 }
 
-header > h1 {
+header>h1 {
 	display: block;
-	margin:0;
+	margin: 0;
 	margin-bottom: 10px;
 	font-size: 12pt;
-	color: var(--palette4);
+	color: var(--palette2-50d);
 	margin-top: 10px;
-	border-bottom: 2px solid var(--palette4);
-	padding-bottom:6px;
+	border-bottom: 2px solid var(--palette2-50d);
+	padding-bottom: 6px;
 }
 
 #letter-logo {
 	width: 70%;
 	max-width: 300px;
 	display: block;
+	background: radial-gradient(closest-side, white, transparent);
 }
 
 #logo {
@@ -115,7 +109,7 @@ nav.enabled {
 	height: 300px;
 }
 
-nav > ul {
+nav>ul {
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -130,18 +124,19 @@ nav > ul {
 	align-items: stretch;
 }
 
-.nav-item > a {
+.nav-item>a {
 	background: none;
 	color: white;
-	text-decoration:none;
+	text-decoration: none;
 	padding: 20px;
 	text-align: center;
+	text-shadow: 0 0 4px #000000aa;
 	flex-grow: 1;
 	border-radius: 8px;
 	transition: background-color, 0.2s;
 }
 
-.nav-item > a:hover {
+.nav-item>a:hover {
 	/* background: var(--palette1-acc1-t); */
 	background: #00000044;
 }
@@ -150,35 +145,35 @@ nav > ul {
 	header {
 		padding-bottom: 0;
 	}
-	
-	header > h1 {
+
+	header>h1 {
 		text-align: center;
 		font-size: 16pt;
 	}
-	
+
 	#letter-logo {
 		max-width: 400px;
 		margin: auto;
 	}
-	
+
 	#logo {
 		visibility: visible;
 	}
-	
+
 	#nav-button {
 		display: none;
 	}
-	
+
 	nav {
 		height: 60px;
 	}
-	
-	nav > ul {
+
+	nav>ul {
 		flex-direction: row;
 		justify-content: center;
 	}
-	
-	.nav-item > a{
+
+	.nav-item>a {
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 	}
@@ -187,11 +182,11 @@ nav > ul {
 
 main {
 	padding: 10px;
-	color: var(--palette3);
+	color: var(--palette3-20d);
 }
 
 main h2 {
-	color: var(--palette3-30d);
+	color: var(--palette3-50d);
 	text-decoration: underline var(--palette4);
 	/* border-bottom: 2px solid var(--palette4); */
 	/* width: 40%; */
@@ -199,12 +194,12 @@ main h2 {
 
 
 footer {
-	background: linear-gradient(160deg,var(--palette2),var(--palette3));
+	background: linear-gradient(160deg, var(--palette2), var(--palette3));
 	color: white;
 	padding: 30px;
 }
 
-footer > * {
+footer>* {
 	margin: auto;
 	text-align: center;
 	font-style: italic;
@@ -215,8 +210,9 @@ footer a {
 }
 
 #back-to-top-button {
-	text-decoration:underline;
-	cursor:pointer;
+	text-decoration: underline;
+	font-style: normal;
+	cursor: pointer;
 }
 
 .fig-right {
@@ -225,7 +221,7 @@ footer a {
 
 @media screen and (min-width: 800px) {
 	.fig-right {
-		width:50%;
+		width: 50%;
 		float: right;
 		background: red;
 		margin-left: 40px;
@@ -235,34 +231,34 @@ footer a {
 /* All the carousel-related stuff below */
 
 .carousel:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px #00000040 inset;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity, 0.3s;
+	content: "";
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px #00000040 inset;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity, 0.3s;
 }
 
 .carousel:hover:before {
-  opacity: 1;
+	opacity: 1;
 }
 
 .carousel {
 	background: none;
 	aspect-ratio: 3 / 2;
 	position: relative;
-	overflow:clip;
+	overflow: clip;
 }
 
 .carousel * {
 	user-select: none;
 }
 
-.carousel > .carousel-content {
+.carousel>.carousel-content {
 	position: relative;
 	height: calc(95% - 32px);
 	width: 90%;
@@ -278,7 +274,7 @@ footer a {
 }
 
 /* Hides images in carousel until loaded */
-.carousel > img {
+.carousel>img {
 	display: none;
 }
 
@@ -286,18 +282,18 @@ footer a {
 	position: absolute;
 	/* Makes the images the right aspect ratio */
 	width: auto;
-	margin-left:50%;
+	margin-left: 50%;
 	border-radius: 5px;
 }
 
 .carousel .carousel-controls {
 	position: absolute;
 	z-index: 1;
-	top:0;
-	left:0;
-	height:100%;
-	width:100%;
-	pointer-events:none;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
 	transition: opacity, 0.3s;
 }
 
@@ -306,7 +302,7 @@ footer a {
 	top: 40%;
 	aspect-ratio: 1;
 	position: absolute;
-	pointer-events:auto;
+	pointer-events: auto;
 	background: none;
 	border: none;
 	display: flex;
@@ -322,26 +318,26 @@ footer a {
 }
 
 .carousel .carousel-button-right {
-	right:0;
+	right: 0;
 }
 
-.carousel .carousel-button-left > img {
+.carousel .carousel-button-left>img {
 	position: relative;
 	filter: drop-shadow(0 0 4px #00000088);
 	transform: scaleX(-1);
 }
 
-.carousel .carousel-button-right > img {
+.carousel .carousel-button-right>img {
 	position: relative;
 	filter: drop-shadow(0 0 4px #00000088);
 }
 
-.carousel .carousel-button-right:hover > img{
+.carousel .carousel-button-right:hover>img {
 	filter: drop-shadow(0 0 4px black);
 	left: 2px;
 }
 
-.carousel .carousel-button-left:hover > img{
+.carousel .carousel-button-left:hover>img {
 	filter: drop-shadow(0 0 4px black);
 	left: -2px;
 }
@@ -361,7 +357,7 @@ footer a {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: radial-gradient(ellipse farthest-side at 50% 100%,#00000088,#00000000);
+	background: radial-gradient(ellipse farthest-side at 50% 100%, #00000088, #00000000);
 	opacity: 0;
 	transition: opacity, 0.3s;
 }
@@ -388,6 +384,7 @@ footer a {
 	background-color: var(--palette4);
 	border-radius: 50%;
 	border: 2px solid transparent;
+	outline: 0px solid var(--palette4);
 	background-clip: padding-box;
 	transition: all 0.2s;
 }
@@ -409,7 +406,7 @@ footer a {
 
 .carousel:hover .carousel-dots .carousel-dot.selected span {
 	outline: none;
-	background-color: var(--palette3);
+	background-color: var(--palette3-20d);
 	width: 14px;
 	height: 14px;
 }

@@ -32,7 +32,7 @@ $(function(){
 	// Image Carousels
 	$('.carousel').toArray().forEach(e => {
 		
-		let items = [...e.children];
+		let items = [...e.children].filter(child => (child.tagName!="NOSCRIPT"));
 		let curIndex = 0;
 		
 		// moving all elements of carousel into a div
@@ -44,8 +44,6 @@ $(function(){
 			item.style.maxWidth = '100%';
 			item.style.top = '50%';
 			item.style.transform = 'translate(-50%,-50%)';
-			// item.style.left = index*300+'px';
-			// item.style.zIndex = items.length-1-index;
 			item.style.zIndex = 0;
 			item.style.opacity = 0;
 			
@@ -98,6 +96,8 @@ $(function(){
 			return false;
 		});
 		
+
+
 		
 		// Event that fires when an element is clicked
 		let setIndex = function(n)
@@ -152,9 +152,11 @@ $(function(){
 			},{duration: 160, queue: false});
 		}
 		
-		// TODO change this to pause on certain conditions
 		// Automatically switches the image every once in a while
-		window.setInterval(moveRight, 6000);
+		let autoScroll = window.setInterval(moveRight, 6000);
+		e.addEventListener("mouseenter", () => (clearInterval(autoScroll)));
+		e.addEventListener("mouseleave", () => (clearInterval(autoScroll),autoScroll=window.setInterval(moveRight,6000)));
+		
 	});
 	
 	// Block context menus on all images on the page to discourage copying.
