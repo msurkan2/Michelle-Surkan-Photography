@@ -49,7 +49,7 @@ header {
 	position: relative;
 }
 
-header > * {
+header>* {
 	position: relative;
 }
 
@@ -67,14 +67,14 @@ header > * {
 	position: absolute;
 	top: 100px;
 	left: 0;
-	transform:translatey(-60%);
+	transform: translatey(-60%);
 	/* display: none; */
 }
 
 #backdrop img {
 	display: block;
-	width:100%;
-	height:auto;
+	width: 100%;
+	height: auto;
 }
 
 header>h1 {
@@ -92,7 +92,7 @@ header>h1 {
 #letter-logo {
 	width: 70%;
 	max-width: 300px;
-	/* margin-inline: 10px; */
+	margin-inline: 10px;
 	display: block;
 }
 
@@ -104,7 +104,7 @@ header>h1 {
 	left: 50%;
 	position: absolute;
 	background: radial-gradient(closest-side, white 40%, transparent);
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 }
 
 #letter-logo img {
@@ -147,19 +147,20 @@ header>h1 {
 }
 
 nav {
+	top: 0;
 	display: flex;
 	justify-content: center;
 	overflow-y: clip;
 	/* display: none; */
 	height: 0;
-	transition: height 0.3s;
-	background:var(--palette2-50d);
+	transition: height 0.4s;
+	background: var(--palette2-50d);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
 
 nav.enabled {
-	height: 298px;
+	height: 476px;
 }
 
 nav>ul {
@@ -248,7 +249,8 @@ main {
 	padding: 10px;
 	color: var(--palette3-20d);
 	box-shadow: 0 0 20px #00000088;
-	position: relative; /* makes the shadow appear correctly */
+	position: relative;
+	/* makes the shadow appear correctly */
 }
 
 main h2 {
