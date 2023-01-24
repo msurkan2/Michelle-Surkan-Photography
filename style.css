@@ -246,20 +246,53 @@ nav>ul {
 
 
 main {
-	padding: 10px;
 	color: var(--palette3-20d);
 	box-shadow: 0 0 20px #00000088;
 	position: relative;
 	/* makes the shadow appear correctly */
 }
 
+article > section {
+    padding-block: 30px;
+    padding-inline: 50px;
+}
+
 main h2 {
-	color: var(--palette3-50d);
 	text-decoration: underline var(--palette4);
 }
 
 main p {
-	line-height: 1.5;
+    line-height: 1.5;
+}
+
+main hr {
+    border: none;
+    background-image: linear-gradient(to right,transparent, var(--palette1) 15% 85%,transparent);
+    height: 4px;
+    margin-inline: 5%;
+    margin-block: -2px;
+    z-index: 0;
+    position: relative;
+}
+
+section.light h2 {
+    color: var(--palette3-50d);
+}
+
+section.dark {
+    background: linear-gradient(50deg, #555, #888);
+}
+
+section.dark h2 {
+    color: var(--palette3);
+}
+
+section.dark p {
+    color: white;
+}
+
+section.dark .carousel-content * {
+    box-shadow: 0 0 20px #ffffff88;
 }
 
 
@@ -285,16 +318,21 @@ footer a {
 	cursor: pointer;
 }
 
-.fig-right {
+.fig-right .fig-left {
 	width: 100%;
 }
 
 @media screen and (min-width: 800px) {
 	.fig-right {
-		width: 50%;
+		width: calc(50% - 40px);
 		float: right;
-		background: red;
 		margin-left: 40px;
+	}
+    
+    .fig-left {
+        width: calc(50% - 40px);
+		float: left;
+		margin-right: 40px;
 	}
 }
 
