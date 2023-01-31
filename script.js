@@ -74,21 +74,23 @@ $(function () {
 		//Add mouse wheel control
 		let wheelCooldown = true;
 		$(e).on('wheel', function (ev) {
-			if (wheelCooldown) {
-				if (ev.originalEvent.deltaY < 0) {
-					// scroll up
-					queueAction(e, 45, moveLeft);
-				}
-				else {
-					// scroll down
-					queueAction(e, 45, moveRight);
-				}
-
-				// Cooldown to stop users from scrolling too fast
-				wheelCooldown = false;
-				window.setTimeout(() => wheelCooldown = true, 30);
-			}
-			return false;
+            if(ev.shiftKey) {
+                if (wheelCooldown) {
+                    if (ev.originalEvent.deltaY < 0) {
+                        // scroll up
+                        queueAction(e, 45, moveLeft);
+                    }
+                    else {
+                        // scroll down
+                        queueAction(e, 45, moveRight);
+                    }
+    
+                    // Cooldown to stop users from scrolling too fast
+                    wheelCooldown = false;
+                    window.setTimeout(() => wheelCooldown = true, 30);
+                }
+                return false;
+            }
 		});
 
 		// Add touch screen swipe control
