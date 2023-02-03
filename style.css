@@ -7,7 +7,7 @@
 	--palette3: #93c5e2;
 	--palette3-20d: #769eb5;
 	--palette3-50d: #4a6371;
-	--palette4: #e2af93;
+	--palette4: #E7CFEC;
 	--palette4-50l: #f1d7c9;
 	--palette4-50lt: #f1d7c988;
 
@@ -288,7 +288,7 @@ main p {
 
 main hr {
     border: none;
-    background-image: linear-gradient(to right,transparent, var(--palette1) 15% 85%,transparent);
+    background-image: linear-gradient(to right,transparent, var(--palette2) 15% 85%,transparent);
     height: 4px;
     margin-inline: 5%;
     margin-block: -2px;
