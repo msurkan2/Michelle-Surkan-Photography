@@ -113,10 +113,10 @@ header>h1 {
 }
 
 #logo {
-	width: 80px;
-	position: absolute;
-	visibility: hidden;
-	margin-inline: 10px;
+	width: 60px;
+    position: absolute;
+    top: 16px;
+    z-index: 11;
 }
 
 #nav-button:before {
@@ -221,7 +221,8 @@ nav>ul {
 	}
 
 	#logo {
-		visibility: visible;
+        left: 5px;
+        top: 2px;
 	}
 
 	#nav-button {
