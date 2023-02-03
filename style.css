@@ -7,6 +7,7 @@
 	--palette3: #93c5e2;
 	--palette3-20d: #769eb5;
 	--palette3-50d: #4a6371;
+	--palette3-dark: #304653;
 	--palette4: #e2af93;
 	--palette4-50l: #f1d7c9;
 	--palette4-50lt: #f1d7c988;
@@ -77,13 +78,12 @@ header>* {
 	height: auto;
 }
 
-header>h1 {
+header>h2 {
 	display: block;
 	margin: 0;
 	margin-bottom: 10px;
 	font-size: 12pt;
 	color: var(--palette2-50d);
-	margin-top: 10px;
 	margin-inline: 10px;
 	border-bottom: 2px solid var(--palette2-50d);
 	padding-bottom: 6px;
@@ -97,7 +97,7 @@ header>h1 {
 }
 
 #letter-logo:before {
-	content: "";
+    content: "";
 	width: calc(100% + 50px);
 	height: calc(100% + 80px);
 	top: calc(50% + 30px);
@@ -107,9 +107,12 @@ header>h1 {
 	transform: translate(-50%, -50%);
 }
 
-#letter-logo img {
-	width: 100%;
+#letter-logo > * {
+    margin: 0;
+    width: 100%;
 	position: relative;
+    font-size: 27pt;
+    color: var(--palette3-dark);
 }
 
 #logo {
@@ -210,7 +213,7 @@ nav>ul {
 		padding-bottom: 0;
 	}
 
-	header>h1 {
+	header>h2 {
 		text-align: center;
 		font-size: 16pt;
 	}
@@ -219,6 +222,11 @@ nav>ul {
 		max-width: 400px;
 		margin: auto;
 	}
+
+    #letter-logo > * {
+        font-size: 4vw;
+        text-align: center;
+    }
 
 	#logo {
         left: 5px;
