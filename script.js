@@ -27,6 +27,12 @@ $(function () {
 	// Fill in the copyright year
 	$('#copyright-year').text(new Date().getFullYear());
 
+    // Make logo text animate on scroll
+    const headerElement = $('header');
+    document.addEventListener('scroll', () => {
+        $('#logo').toggleClass('text-on',window.scrollY > headerElement.height());
+    });
+
 	// Image Carousels
 	$('.carousel').toArray().forEach(e => {
 
