@@ -4,12 +4,12 @@
     --palette2: #d793e2;
     --palette2-t: #d793e288;
     --palette2-50d: #6c4a71;
+    --palette2-light: #e9dbeb;
     --palette3: #93c5e2;
     --palette3-20d: #769eb5;
     --palette3-50d: #4a6371;
     --palette3-dark: #304653;
     --palette4: #e2af93;
-    --palette4: #E7CFEC;
     --palette4-50l: #f1d7c9;
     --palette4-50lt: #f1d7c988;
 
@@ -291,6 +291,15 @@ section.dark .carousel-content * {
     box-shadow: 0 0 10px #ffffff88;
 }
 
+#contact-form {
+    display: block;
+    width: 100%;
+    margin: auto;
+    background-color: var(--palette2-light);
+    border-radius: 12px;
+    border: 2px solid white;
+    overflow: auto;
+}
 
 footer {
     background: linear-gradient(160deg, var(--palette2), var(--palette3));
@@ -511,6 +520,14 @@ footer a {
     font-weight: normal;
 }
 
+* {
+    scroll-margin-top: 64px;
+}
+
+#pricing, #contact {
+    scroll-margin-top: 108px;
+}
+
 /* Desktop Styles */
 
 @media screen and (min-width: 1024px) {
@@ -562,10 +579,6 @@ footer a {
         top: 0;
     }
 
-    * {
-        scroll-margin-top: 64px;
-    }
-
     section.first .carousel {
         width: 60%;
     }
@@ -580,6 +593,10 @@ footer a {
         width: calc(50% - 40px);
         float: left;
         margin-right: 40px;
+    }
+
+    #contact-form {
+        width: 750px;
     }
 
     #inclusivity-statement {

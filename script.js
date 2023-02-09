@@ -21,6 +21,21 @@ const queueAction = (() => {
 	return queueAction;
 })();
 
+// function to adjust the height of the google form iframe until it does not scroll
+function adjustFormHeight(obj)
+{
+
+    const initialWidth = obj.clientWidth;
+
+    for(let i = 20; i <= 2000;i+=20)
+    {
+        obj.style.height = i + 'px';
+        console.log(obj.style.height,obj.clientWidth);
+        if(obj.clientWidth != initialWidth) break;
+    }
+    console.log(obj.style.height);
+}
+
 // Jquery event that runs when document is ready
 $(function () {
 
@@ -32,6 +47,25 @@ $(function () {
     document.addEventListener('scroll', () => {
         $('#logo').toggleClass('text-on',window.scrollY > headerElement.height());
     });
+
+    // Make anchors scroll smoothly
+
+    // The speed of the scroll in milliseconds
+    const speed = 500;
+
+    $('a[href*="#"]')
+      .filter((i, a) => a.getAttribute('href').startsWith('#') || a.href.startsWith(`${location.href}#`))
+      .unbind('click.smoothScroll')
+      .bind('click.smoothScroll', event => {
+
+        const targetId = event.currentTarget.getAttribute('href').split('#')[1];
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          event.preventDefault();
+          $('html, body').animate({ scrollTop: $(targetElement).offset().top - parseInt($(targetElement).css('scroll-margin-top'),10) }, speed);
+        }
+      });
 
 	// Image Carousels
 	$('.carousel').toArray().forEach(e => {
