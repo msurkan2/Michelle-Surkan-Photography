@@ -45,7 +45,7 @@ $(function () {
     // Make logo text animate on scroll
     const headerElement = $('header');
     document.addEventListener('scroll', () => {
-        $('#logo').toggleClass('text-on',window.scrollY > headerElement.height());
+        $('nav').toggleClass('text-on',window.scrollY > headerElement.height());
     });
 
     // Make anchors scroll smoothly
