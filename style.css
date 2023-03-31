@@ -289,6 +289,7 @@ main p.footnote {
     flex-flow: column wrap;
     justify-content: space-evenly;
     gap: 2rem;
+    padding-bottom: 2rem;
 }
 
 .card {
@@ -321,6 +322,15 @@ main p.footnote {
     display: flex;
     flex-flow: column nowrap;
     gap: 0.5rem;
+}
+
+.card-with-footnote {
+    position: relative;
+}
+
+.card-with-footnote .footnote {
+    position: absolute;
+    bottom: -3rem;
 }
 
 #contact-form {
@@ -474,7 +484,7 @@ footer a {
         flex-direction: row;
     }
 
-    .card {
+    .card-layout > * {
         flex: 1;
     }
 
