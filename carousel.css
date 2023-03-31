@@ -1,0 +1,188 @@
+
+
+.carousel:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px #00000040 inset;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity, 0.3s;
+}
+
+.carousel:hover:before {
+    opacity: 1;
+}
+
+.carousel {
+    background: none;
+    aspect-ratio: 3 / 2;
+    position: relative;
+    overflow: clip;
+}
+
+.carousel * {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.carousel>.carousel-content {
+    position: relative;
+    height: calc(95% - 32px);
+    width: 90%;
+    top: calc(5% - 5px);
+    left: 5%;
+    overflow: visible;
+    z-index: 0;
+    transition: top, 0.3s;
+}
+
+.carousel:hover .carousel-content {
+    top: 5%;
+}
+
+/* Hides images in carousel until loaded */
+.carousel>img {
+    display: none;
+}
+
+.carousel .carousel-content * {
+    position: absolute;
+    /* Makes the images the right aspect ratio */
+    width: auto;
+    margin-left: 50%;
+    border-radius: 5px;
+}
+
+.carousel .carousel-controls {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    transition: opacity, 0.3s;
+}
+
+.carousel .carousel-button {
+    height: 20%;
+    top: 40%;
+    aspect-ratio: 1;
+    position: absolute;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.carousel:hover .carousel-button {
+    opacity: 1;
+}
+
+.carousel .carousel-button-right {
+    right: 0;
+}
+
+.carousel .carousel-button-left>img {
+    position: relative;
+    -webkit-filter: drop-shadow(0 0 4px #00000088);
+            filter: drop-shadow(0 0 4px #00000088);
+    transform: scaleX(-1);
+}
+
+.carousel .carousel-button-right>img {
+    position: relative;
+    -webkit-filter: drop-shadow(0 0 4px #00000088);
+            filter: drop-shadow(0 0 4px #00000088);
+}
+
+.carousel .carousel-button-right:hover>img {
+    -webkit-filter: drop-shadow(0 0 4px black);
+            filter: drop-shadow(0 0 4px black);
+    left: 2px;
+}
+
+.carousel .carousel-button-left:hover>img {
+    -webkit-filter: drop-shadow(0 0 4px black);
+            filter: drop-shadow(0 0 4px black);
+    left: -2px;
+}
+
+.carousel .carousel-dots {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.carousel .carousel-dots:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(ellipse farthest-side at 50% 100%, #00000088, #00000000);
+    opacity: 0;
+    transition: opacity, 0.3s;
+}
+
+.carousel:hover .carousel-dots:before {
+    opacity: 1;
+}
+
+.carousel .carousel-dots .carousel-dot {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel .carousel-dots .carousel-dot span {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    background-color: var(--palette3-20d);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    outline: 0px solid var(--palette3-20d);
+    background-clip: padding-box;
+    transition: all 0.2s;
+}
+
+.carousel:hover .carousel-dots .carousel-dot span {
+    background-color: white;
+    border-color: white;
+    background-clip: initial;
+}
+
+.carousel .carousel-dots .carousel-dot:hover span {
+    top: -2px;
+}
+
+.carousel .carousel-dots .carousel-dot.selected span {
+    outline: 2px solid var(--palette3-20d);
+}
+
+.carousel:hover .carousel-dots .carousel-dot.selected span {
+    outline: none;
+    background-color: var(--palette2);
+    width: 14px;
+    height: 14px;
+}
