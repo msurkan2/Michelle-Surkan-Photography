@@ -299,6 +299,7 @@ main p.footnote {
     box-shadow: 0 4px 12px #00000044;
     border: 2px solid white;
     overflow: clip;
+    max-width: 100%;
 }
 
 .card .c-head {
@@ -337,6 +338,10 @@ main p.footnote {
 .card-with-footnote .footnote {
     position: absolute;
     bottom: -3rem;
+}
+
+.card li {
+    overflow: auto;
 }
 
 #price-tiers {
