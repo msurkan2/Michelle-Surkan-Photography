@@ -289,6 +289,8 @@ main p.footnote {
     flex-flow: column wrap;
     justify-content: space-evenly;
     gap: 2rem;
+    padding-bottom: 2rem;
+    align-items: stretch;
 }
 
 .card {
@@ -297,6 +299,7 @@ main p.footnote {
     box-shadow: 0 4px 12px #00000044;
     border: 2px solid white;
     overflow: clip;
+    max-width: 100%;
 }
 
 .card .c-head {
@@ -321,6 +324,63 @@ main p.footnote {
     display: flex;
     flex-flow: column nowrap;
     gap: 0.5rem;
+}
+
+.card-with-footnote {
+    position: relative;
+}
+
+.card-with-footnote .card {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card-with-footnote .footnote {
+    position: absolute;
+    bottom: -3rem;
+}
+
+.card li {
+    overflow: auto;
+}
+
+#price-tiers {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#price-tiers caption {
+    font-weight: bold;
+}
+
+#price-tiers :where(td, th) {
+    border: 2px solid var(--palette2-50d);
+    padding: 0.3rem;
+}
+
+#price-tiers th {
+    background-color: var(--palette2-20d);
+    color: white;
+}
+
+#tbronze {
+    color: white;
+    font-weight: bold;
+    background: #c48a4d;
+}
+
+#tsilver {
+    color: white;
+    font-weight: bold;
+    background: #b5c8d1;
+}
+
+#tgold {
+    color: white;
+    font-weight: bold;
+    background: #e6cb36;
+    outline: 4px dashed #ffef93;
+    outline-offset: -2px;
 }
 
 #contact-form {
@@ -474,7 +534,7 @@ footer a {
         flex-direction: row;
     }
 
-    .card {
+    .card-layout > * {
         flex: 1;
     }
 
