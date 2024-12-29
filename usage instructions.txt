@@ -1,0 +1,18 @@
+To use the script to update photos in carousels:
+
+1. add / remove photos from respective folders in images folders
+
+    Photos will be loaded in alphabetical order, so if you want to change the order they appear in the carousel, name them accordingly
+    (e.g. "1_bob.jpg" "2_alice.jpg" ...)
+
+2. run update_photos.py
+
+3. open index.html to check that the website looks correct
+
+4. commit & push changes to github
+
+Running python scripts:
+
+1. install python https://www.python.org/downloads/
+
+2. right click the .py file in file explorer and select open with -> python
